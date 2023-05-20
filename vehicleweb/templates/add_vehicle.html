@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block body_block%}
+
+
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+
+        <h1>ADD VEHICLE DATA</h1>
+        
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+                <div>
+                <button type="submit" class="btn btn-dark" >save</button>   
+                </div>
+            </form>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+
+
+{%endblock%}
+
+

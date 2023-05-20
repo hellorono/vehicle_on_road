@@ -1,0 +1,67 @@
+{%extends 'base.html'%}
+
+
+{%block body_block%}
+
+
+<div class="container">
+
+    <div class="text-right">
+    <a href="{%url 'add_vehicle'%}"><button type="button" class="btn btn-info">ADD</button></a>
+
+    
+
+    </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+    
+    
+            
+        <table class="table table-bordered " id="table">
+        <thead >
+            <tr>
+                <th>Vehicle id</th>
+                <th>Vehicle Type</th>
+                <th>Vehicle Model</th>
+                <th>Vehicle description</th>
+                <th>Vehicle Number</th>
+                <th>Update</th>
+                <th>Delete</th>
+                
+                
+            </tr>
+        </thead>
+    
+        <tbody>
+            {%for d in data%}
+            <tr>
+                <td>{{d.vehicle_id}}</td>
+                <td>{{d.vehicle_type}}</td>
+                <td>{{d.vehicle_model}}</td>
+                <td>{{d.vehicle_description}}</td>
+                <td>{{d.vehicle_number}}</td>
+                
+    
+    
+                <td>
+                    
+                    <a href="{%url 'update' d.vehicle_id%}"><button type="submit" class="btn btn-dark">Update</button></a>
+
+                </td>
+    
+                <td>
+                    <a href="{%url 'delete' d.vehicle_id%}"><button type="button"class="btn btn-danger">Delete</button></a>
+
+                </td>
+            </tr>
+            {%endfor%}
+            </tbody>
+         </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    
+{%endblock%}
